@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mindcore — Your AI Best Friend</title>
+    <meta name="description" content="Mindcore is a local‑first AI companion that remembers your life and talks to you using your private memory.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <canvas id="bg"></canvas>
+    <div id="gradient"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="logo-dot" aria-hidden="true"></span>
+          <span class="brand-text">Mindcore</span>
+        </div>
+        <nav class="nav">
+          <a href="#idea">Idea</a>
+          <a href="#how">How it works</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#join" class="btn btn-outline" data-open-modal>Get Early Access</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-inner">
+          <div class="eyebrow" data-reveal>Local‑first AI Companion</div>
+          <h1 class="headline" data-reveal>
+            Your life. Remembered.
+            <span class="sub">Conversations that feel real — because nothing is forgotten.</span>
+          </h1>
+          <div class="cta" data-reveal>
+            <button class="btn btn-primary" data-open-modal>Reserve Your Spot</button>
+            <button class="btn btn-ghost" data-scroll-to="#idea">Learn more</button>
+          </div>
+          <ul class="hero-highlights" aria-label="Highlights">
+            <li data-reveal>Always present, quietly helpful</li>
+            <li data-reveal>Private timeline on your device</li>
+            <li data-reveal>Thoughtful check‑ins and reminders</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section grid-2" id="idea">
+        <div class="container">
+          <div class="section-header">
+            <h2 data-reveal>The Core Idea</h2>
+            <p class="section-kicker" data-reveal>Not a tool. A friend powered by AI.</p>
+          </div>
+          <div class="grid">
+            <div class="card" data-reveal>
+              <h3>Always Present</h3>
+              <p>Runs in the background and pays attention to your screen, apps, voice, and environment — only with your permission.</p>
+            </div>
+            <div class="card" data-reveal>
+              <h3>Memory that Lasts</h3>
+              <p>Builds a private lifelog on your device. Moments become memories that are searchable, retrievable, and useful.</p>
+            </div>
+            <div class="card" data-reveal>
+              <h3>Conversations that Feel Real</h3>
+              <p>Because it remembers, it can follow up on things you did days, weeks, or months ago.</p>
+            </div>
+            <div class="card" data-reveal>
+              <h3>A True Companion</h3>
+              <p>It doesn’t just wait for you to talk — it checks in, nudges, and supports your goals.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how">
+        <div class="container">
+          <div class="section-header">
+            <h2 data-reveal>How it Works</h2>
+            <p class="section-kicker" data-reveal>Observe → Interpret → Store → Decide → Engage → Learn</p>
+          </div>
+
+          <div class="timeline">
+            <div class="tl-item" data-reveal>
+              <span class="tl-bullet"></span>
+              <div>
+                <h4>Observe</h4>
+                <p>Trackers for apps, files, screen, mic/cam (opt‑in) feed events into the daemon.</p>
+              </div>
+            </div>
+            <div class="tl-item" data-reveal>
+              <span class="tl-bullet"></span>
+              <div>
+                <h4>Interpret</h4>
+                <p>Summarizes, tags, and embeds events into lightweight memories.</p>
+              </div>
+            </div>
+            <div class="tl-item" data-reveal>
+              <span class="tl-bullet"></span>
+              <div>
+                <h4>Store</h4>
+                <p>Private timeline in SQLite + vector index. Local‑first by design.</p>
+              </div>
+            </div>
+            <div class="tl-item" data-reveal>
+              <span class="tl-bullet"></span>
+              <div>
+                <h4>Decide</h4>
+                <p>Policies trigger check‑ins, nudges, and reminders based on context.</p>
+              </div>
+            </div>
+            <div class="tl-item" data-reveal>
+              <span class="tl-bullet"></span>
+              <div>
+                <h4>Engage</h4>
+                <p>Chat naturally; TTS can speak; notifications appear when helpful.</p>
+              </div>
+            </div>
+            <div class="tl-item" data-reveal>
+              <span class="tl-bullet"></span>
+              <div>
+                <h4>Learn</h4>
+                <p>Adapts to your routines, mood, and preferences over time.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="features grid">
+            <div class="feature" data-reveal>
+              <h3>Pluggable Skills</h3>
+              <p>Simple skills/plugins react to triggers and act through a local SDK.</p>
+            </div>
+            <div class="feature" data-reveal>
+              <h3>Episodic Memory</h3>
+              <p>Moments become searchable memories with summaries, tags, and embeddings.</p>
+            </div>
+            <div class="feature" data-reveal>
+              <h3>Orchestrated Conversation</h3>
+              <p>Retrieval‑augmented prompts with a plan → answer loop and safety self‑check.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="privacy">
+        <div class="container">
+          <div class="section-header">
+            <h2 data-reveal>Privacy, Consent, and Safety</h2>
+            <p class="section-kicker" data-reveal>Private by default. You stay in control.</p>
+          </div>
+
+          <div class="grid policy">
+            <div class="card" data-reveal>
+              <h3>Local‑first</h3>
+              <p>Data stays on your machine. No cloud sync by default.</p>
+            </div>
+            <div class="card" data-reveal>
+              <h3>Granular Consent</h3>
+              <p>Per‑sensor toggles. You choose what Mindcore can see or hear.</p>
+            </div>
+            <div class="card" data-reveal>
+              <h3>Encryption at Rest</h3>
+              <p>Field‑level AES‑GCM with locked/unlocked control. Passphrase never stored.</p>
+            </div>
+            <div class="card" data-reveal>
+              <h3>Transparency</h3>
+              <p>Daily snapshot and a quick “Do not record” toggle to pause capture anytime.</p>
+            </div>
+          </div>
+
+          <div class="cta center" data-reveal>
+            <button class="btn btn-primary" data-open-modal>I'm interested — keep me posted</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="join">
+        <div class="container">
+          <div class="section-header">
+            <h2 data-reveal>Join the Early Access</h2>
+            <p class="section-kicker" data-reveal>Be one of the first to try Mindcore.</p>
+          </div>
+
+          <div class="grid-cta">
+            <div class="cta-card" data-reveal>
+              <h3>Students & Creators</h3>
+              <p>Shape a companion that helps you study, build, and stay balanced.</p>
+              <button class="btn btn-outline" data-open-modal>Reserve a spot</button>
+            </div>
+            <div class="cta-card" data-reveal>
+              <h3>Contributors</h3>
+              <p>We’re building in the open. Contribute skills, integrations, or research.</p>
+              <a class="btn btn-ghost" href="#how">See the architecture</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="brand small">
+          <span class="logo-dot" aria-hidden="true"></span>
+          <span class="brand-text">Mindcore</span>
+        </div>
+        <div class="legal">
+          <a href="#privacy">Privacy</a>
+          <span>•</span>
+          <a href="#how">How it works</a>
+          <span>•</span>
+          <button class="link" data-open-modal>Join</button>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal" id="interest-modal" aria-hidden="true" role="dialog" aria-modal="false">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-dialog" role="document" aria-labelledby="interest-title">
+        <button class="modal-close" aria-label="Close" data-close-modal>×</button>
+        <h3 id="interest-title">Join Early Access</h3>
+        <p>Share your email and how you’d like to use Mindcore.</p>
+        <form id="interest-form" class="form">
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+          </label>
+          <label>
+            <span>How would you use Mindcore?</span>
+            <textarea name="use" rows="4" placeholder="Study buddy, focus coach, memory timeline…" required></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Send</button>
+            <button type="button" class="btn btn-ghost" data-copy>Copy message</button>
+            <a class="btn btn-outline" data-mailto href="#">Open email</a>
+            <button type="button" class="btn btn-outline" data-export>Export JSON</button>
+          </div>
+          <p class="form-note">We store your info only for early access updates. No spam.</p>
+        </form>
+        <div class="form-success" hidden>
+          <h4>Thank you!</h4>
+          <p>We’ve recorded your interest. We’ll reach out soon.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./scripts.js" defer></script>
+  </body>
+  </html>
+
+
