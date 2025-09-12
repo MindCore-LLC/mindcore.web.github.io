@@ -74,14 +74,18 @@
   }
 
   // Interest form handling
-  function composeMessage(email, use) {
-    return `Early Access Interest\nEmail: ${email}\nUse case: ${use}`;
+  function getLikelihood() {
+    const el = document.querySelector('input[name="likelihood"]:checked');
+    return el ? el.value : '';
+  }
+  function composeMessage(email, use, like) {
+    return `Early Access Interest\nEmail: ${email}\nUse case: ${use}\nLikelihood: ${like}/5`;
   }
   function updateMailto(email, use) {
     const a = qs('[data-mailto]');
     const subject = encodeURIComponent('Mindcore Early Access');
-    const body = encodeURIComponent(composeMessage(email, use));
-    a.href = `mailto:team@mindcore.local?subject=${subject}&body=${body}`;
+    const body = encodeURIComponent(composeMessage(email, use, getLikelihood()))
+    a.href = `mailto:chikimoni61@gmail.com?subject=${subject}&body=${body}`;
   }
   function downloadJSON(data, filename = 'mindcore_interest.json') {
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -96,22 +100,35 @@
     const use = form.use.value.trim();
     updateMailto(email, use);
   });
+  qsa('input[name="likelihood"]').forEach(r => r.addEventListener('change', () => {
+    const email = form.email.value.trim();
+    const use = form.use.value.trim();
+    updateMailto(email, use);
+  }));
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = form.email.value.trim();
     const use = form.use.value.trim();
-    const record = { email, use, ts: new Date().toISOString() };
+    const like = getLikelihood();
+    const record = { email, use, like, ts: new Date().toISOString() };
     try {
       const existing = JSON.parse(localStorage.getItem('mindcore_interest') || '[]');
       existing.push(record);
       localStorage.setItem('mindcore_interest', JSON.stringify(existing));
     } catch {}
+    // Open mail client to send to owner
+    try {
+      const subject = encodeURIComponent('Mindcore Early Access');
+      const body = encodeURIComponent(composeMessage(email, use, like));
+      window.location.href = `mailto:chikimoni61@gmail.com?subject=${subject}&body=${body}`;
+    } catch {}
+
     // Provide immediate feedback
     qs('.form', modal).hidden = true;
     success.hidden = false;
     // optional auto-close after delay
-    setTimeout(closeModal, 1600);
+    setTimeout(closeModal, 2000);
   });
 
   qs('[data-copy]').addEventListener('click', async () => {
@@ -124,14 +141,7 @@
     } catch {}
   });
 
-  const exportBtn = qs('[data-export]');
-  if (exportBtn) {
-    exportBtn.addEventListener('click', () => {
-      const email = form.email.value.trim();
-      const use = form.use.value.trim();
-      downloadJSON({ email, use, ts: new Date().toISOString() });
-    });
-  }
+  // Removed export button per new UX
 
   // Background canvas particles
   const canvas = qs('#bg');

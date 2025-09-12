@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mindcore — Your AI Best Friend</title>
+    <title>MindCore</title>
     <meta name="description" content="Mindcore is a local‑first AI companion that remembers your life and talks to you using your private memory.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/logo.jpg" type="image/jpeg">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
@@ -17,13 +18,17 @@
     <header class="site-header">
       <div class="container header-inner">
         <div class="brand">
-          <span class="logo-dot" aria-hidden="true"></span>
+          <img class="logo-img" src="./assets/logo.jpg" alt="Mindcore logo" />
           <span class="brand-text">Mindcore</span>
         </div>
         <nav class="nav">
           <a href="#idea">Idea</a>
           <a href="#how">How it works</a>
           <a href="#privacy">Privacy</a>
+          <a href="#author">Author</a>
+          <a href="https://www.linkedin.com/company/mindcore-llc/?viewAsMember=true" target="_blank" rel="noopener" aria-label="MindCore LinkedIn">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.27 2.3-2.6 4.73-2.6 5.06 0 5.99 3.33 5.99 7.66V24h-5v-7.4c0-1.77-.03-4.06-2.48-4.06-2.48 0-2.86 1.94-2.86 3.94V24h-5V8z" fill="currentColor"/></svg>
+          </a>
           <a href="#join" class="btn btn-outline" data-open-modal>Get Early Access</a>
         </nav>
       </div>
@@ -57,19 +62,19 @@
           </div>
           <div class="grid">
             <div class="card" data-reveal>
-              <h3>Always Present</h3>
+              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>Always Present</h3>
               <p>Runs in the background and pays attention to your screen, apps, voice, and environment — only with your permission.</p>
             </div>
             <div class="card" data-reveal>
-              <h3>Memory that Lasts</h3>
+              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a2 2 0 0 1-2 2H7l-3 3V7z" fill="none" stroke="currentColor" stroke-width="2"/></svg>Memory that Lasts</h3>
               <p>Builds a private lifelog on your device. Moments become memories that are searchable, retrievable, and useful.</p>
             </div>
             <div class="card" data-reveal>
-              <h3>Conversations that Feel Real</h3>
+              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H7l-3 3V5z" fill="none" stroke="currentColor" stroke-width="2"/></svg>Conversations that Feel Real</h3>
               <p>Because it remembers, it can follow up on things you did days, weeks, or months ago.</p>
             </div>
             <div class="card" data-reveal>
-              <h3>A True Companion</h3>
+              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.65-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2"/></svg>A True Companion</h3>
               <p>It doesn’t just wait for you to talk — it checks in, nudges, and supports your goals.</p>
             </div>
           </div>
@@ -83,62 +88,74 @@
             <p class="section-kicker" data-reveal>Observe → Interpret → Store → Decide → Engage → Learn</p>
           </div>
 
-          <div class="timeline">
-            <div class="tl-item" data-reveal>
-              <span class="tl-bullet"></span>
-              <div>
-                <h4>Observe</h4>
+          <div class="how-grid">
+            <ol class="steps" aria-label="Process">
+              <li class="step-card" data-reveal>
+                <div class="step-head">
+                  <span class="step-num">1</span>
+                  <span class="step-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><path d="M2 12h4m12 0h4M12 2v4m0 12v4" stroke="currentColor" stroke-width="2"/></svg>Observe</span>
+                </div>
                 <p>Trackers for apps, files, screen, mic/cam (opt‑in) feed events into the daemon.</p>
-              </div>
-            </div>
-            <div class="tl-item" data-reveal>
-              <span class="tl-bullet"></span>
-              <div>
-                <h4>Interpret</h4>
+              </li>
+              <li class="step-card" data-reveal>
+                <div class="step-head">
+                  <span class="step-num">2</span>
+                  <span class="step-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M12 4v16" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/></svg>Interpret</span>
+                </div>
                 <p>Summarizes, tags, and embeds events into lightweight memories.</p>
-              </div>
-            </div>
-            <div class="tl-item" data-reveal>
-              <span class="tl-bullet"></span>
-              <div>
-                <h4>Store</h4>
+              </li>
+              <li class="step-card" data-reveal>
+                <div class="step-head">
+                  <span class="step-num">3</span>
+                  <span class="step-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="2"/></svg>Store</span>
+                </div>
                 <p>Private timeline in SQLite + vector index. Local‑first by design.</p>
-              </div>
-            </div>
-            <div class="tl-item" data-reveal>
-              <span class="tl-bullet"></span>
-              <div>
-                <h4>Decide</h4>
+              </li>
+              <li class="step-card" data-reveal>
+                <div class="step-head">
+                  <span class="step-num">4</span>
+                  <span class="step-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l3 6 6 .9-4.5 4.3 1 6-5.5-3-5.5 3 1-6L3 9.9 9 9z" fill="none" stroke="currentColor" stroke-width="2"/></svg>Decide</span>
+                </div>
                 <p>Policies trigger check‑ins, nudges, and reminders based on context.</p>
-              </div>
-            </div>
-            <div class="tl-item" data-reveal>
-              <span class="tl-bullet"></span>
-              <div>
-                <h4>Engage</h4>
+              </li>
+              <li class="step-card" data-reveal>
+                <div class="step-head">
+                  <span class="step-num">5</span>
+                  <span class="step-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H7l-3 3V5z" fill="none" stroke="currentColor" stroke-width="2"/></svg>Engage</span>
+                </div>
                 <p>Chat naturally; TTS can speak; notifications appear when helpful.</p>
-              </div>
-            </div>
-            <div class="tl-item" data-reveal>
-              <span class="tl-bullet"></span>
-              <div>
-                <h4>Learn</h4>
+              </li>
+              <li class="step-card" data-reveal>
+                <div class="step-head">
+                  <span class="step-num">6</span>
+                  <span class="step-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 13l-2 3 3 2" stroke="currentColor" stroke-width="2"/></svg>Learn</span>
+                </div>
                 <p>Adapts to your routines, mood, and preferences over time.</p>
+              </li>
+            </ol>
+
+            <div class="how-visual" data-reveal>
+              <div class="visual-inner">
+                <img src="./assets/logo.jpg" alt="Mindcore mark" />
+                <div class="badge" style="top: 12%; left: 12%">Memories</div>
+                <div class="badge" style="bottom: 14%; left: 18%">Skills</div>
+                <div class="badge" style="top: 18%; right: 10%">Chat</div>
+                <div class="badge" style="bottom: 12%; right: 16%">Privacy</div>
               </div>
             </div>
           </div>
 
           <div class="features grid">
             <div class="feature" data-reveal>
-              <h3>Pluggable Skills</h3>
+              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l4 8h8l-6 5 2 8-8-5-8 5 2-8-6-5h8z" fill="none" stroke="currentColor" stroke-width="2"/></svg>Pluggable Skills</h3>
               <p>Simple skills/plugins react to triggers and act through a local SDK.</p>
             </div>
             <div class="feature" data-reveal>
-              <h3>Episodic Memory</h3>
+              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12a2 2 0 0 1 2 2v12l-4-3H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2"/></svg>Episodic Memory</h3>
               <p>Moments become searchable memories with summaries, tags, and embeddings.</p>
             </div>
             <div class="feature" data-reveal>
-              <h3>Orchestrated Conversation</h3>
+              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="17" cy="7" r="3" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="17" cy="17" r="3" stroke="currentColor" stroke-width="2" fill="none"/><path d="M9.5 10.5 14.5 8M9.5 13.5 14.5 16" stroke="currentColor" stroke-width="2"/></svg>Orchestrated Conversation</h3>
               <p>Retrieval‑augmented prompts with a plan → answer loop and safety self‑check.</p>
             </div>
           </div>
@@ -198,12 +215,26 @@
           </div>
         </div>
       </section>
+      
+      <!-- About Author (moved above footer) -->
+      <section class="section" id="author">
+        <div class="container">
+          <div class="author-card" data-reveal>
+            <img class="author-pic" src="./assets/author_pic.jpg" alt="Author portrait" />
+            <div class="author-content">
+              <h3>About the Author</h3>
+              <p class="author-tag">Built by Vladislav Kondratyev — crafting local‑first AI that actually cares.</p>
+              <a class="btn btn-primary" href="https://www.linkedin.com/in/vladislav-kondratyev/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="brand small">
-          <span class="logo-dot" aria-hidden="true"></span>
+          <img class="logo-img" src="./assets/logo.jpg" alt="Mindcore logo" />
           <span class="brand-text">Mindcore</span>
         </div>
         <div class="legal">
@@ -231,11 +262,19 @@
             <span>How would you use Mindcore?</span>
             <textarea name="use" rows="4" placeholder="Study buddy, focus coach, memory timeline…" required></textarea>
           </label>
+          <label>
+            <span>How likely are you to use or recommend Mindcore?</span>
+            <div class="choices">
+              <label><input type="radio" name="likelihood" value="1" required> 1</label>
+              <label><input type="radio" name="likelihood" value="2"> 2</label>
+              <label><input type="radio" name="likelihood" value="3"> 3</label>
+              <label><input type="radio" name="likelihood" value="4"> 4</label>
+              <label><input type="radio" name="likelihood" value="5"> 5</label>
+            </div>
+          </label>
           <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Send</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
             <button type="button" class="btn btn-ghost" data-copy>Copy message</button>
-            <a class="btn btn-outline" data-mailto href="#">Open email</a>
-            <button type="button" class="btn btn-outline" data-export>Export JSON</button>
           </div>
           <p class="form-note">We store your info only for early access updates. No spam.</p>
         </form>
