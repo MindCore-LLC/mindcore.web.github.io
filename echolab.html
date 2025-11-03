@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EchoLab — MindCore</title>
+  <meta name="description" content="EchoLab page — currently in development.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="./assets/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .dev-wrap{min-height:calc(100vh - 150px);display:grid;place-items:center;padding:40px 0}
+    .dev-card{text-align:center;max-width:620px}
+    .dev-card h1{font-size:clamp(36px,5vw,56px);margin:0 0 12px;line-height:1.1;font-weight:700}
+    .dev-card p{color:var(--muted);margin:0 0 24px;font-size:16px;line-height:1.6}
+    .dev-card .cta{justify-content:center}
+  </style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <div id="gradient"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img class="logo-img" src="./assets/logo.jpg" alt="Mindcore logo" />
+        <span class="brand-text">Mindcore</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html#home">Home</a>
+        <a href="products.html">Products</a>
+        <a href="index.html#privacy">Privacy</a>
+        <button class="btn btn-primary" data-open-modal>Get Early Access</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="dev-wrap">
+    <div class="container">
+      <section class="dev-card" data-reveal>
+        <h1>In development</h1>
+        <p>We're building <strong>EchoLab</strong> — MindCore's research arm focused on emotional intelligence in AI.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="products.html">Back to Products</a>
+          <a class="btn btn-outline" href="echomind.html">Explore EchoMind</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand small">
+        <img class="logo-img" src="./assets/logo.jpg" alt="Mindcore logo" />
+        <span class="brand-text">Mindcore</span>
+      </div>
+      <div class="legal">
+        <a href="index.html#home">Home</a>
+        <span>•</span>
+        <a href="index.html#privacy">Privacy</a>
+        <span>•</span>
+        <button class="link" data-open-modal>Join</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- reuse landing modal -->
+  <div class="modal" id="interest-modal" aria-hidden="true" role="dialog" aria-modal="false">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog" role="document" aria-labelledby="interest-title">
+      <button class="modal-close" aria-label="Close" data-close-modal>×</button>
+      <h3 id="interest-title">Join Early Access</h3>
+      <p>Share your email and how you’d like to use Mindcore.</p>
+      <form id="interest-form" class="form">
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+        </label>
+        <label>
+          <span>How would you use Mindcore?</span>
+          <textarea name="use" rows="4" placeholder="Study buddy, focus coach, memory timeline…" required></textarea>
+        </label>
+        <label>
+          <span>How likely are you to use or recommend Mindcore?</span>
+          <div class="choices">
+            <label><input type="radio" name="likelihood" value="1" required> 1</label>
+            <label><input type="radio" name="likelihood" value="2"> 2</label>
+            <label><input type="radio" name="likelihood" value="3"> 3</label>
+            <label><input type="radio" name="likelihood" value="4"> 4</label>
+            <label><input type="radio" name="likelihood" value="5"> 5</label>
+          </div>
+        </label>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Send</button>
+          <a class="btn btn-outline" data-mailto href="mailto:">Open in Mail</a>
+          <button type="button" class="btn btn-ghost" data-close-modal>Close</button>
+        </div>
+      </form>
+      <div class="form-success" hidden>
+        <p>Thanks! We’ll be in touch.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>

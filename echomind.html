@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EchoMind — MindCore</title>
+  <meta name="description" content="EchoMind — your personal desktop co‑pilot that helps you work, organize, and feel understood.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="./assets/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .hero-echo{padding:120px 0 40px;border-bottom:1px solid var(--line)}
+    .hero-echo .headline{margin-bottom:10px}
+    .specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .specs .card p{margin:6px 0 0;color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,0.04);font-size:12px}
+    .tech dl{display:grid;grid-template-columns: 220px 1fr; gap:8px 16px; margin:0}
+    .tech dt{color:var(--muted)}
+    .tech dd{margin:0}
+    .big-cta{display:grid;place-items:center;padding:48px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));}
+    @media(max-width:1000px){.specs,.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}.tech dl{grid-template-columns: 1fr}}
+    @media(max-width:680px){.specs,.grid-3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <div id="gradient"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img class="logo-img" src="./assets/logo.jpg" alt="Mindcore logo" />
+        <span class="brand-text">Mindcore</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html#home">Home</a>
+        <a href="products.html">Products</a>
+        <a href="index.html#privacy">Privacy</a>
+        <button class="btn btn-primary" data-open-modal>Get Early Access</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-echo">
+      <div class="container">
+        <div class="eyebrow" data-reveal>EchoMind</div>
+        <h1 class="headline" data-reveal>The AI that lives with you — not just on your screen.</h1>
+        <p class="section-kicker" data-reveal>Helps you work, keeps you organized, and understands how you feel while you do it.</p>
+        <div class="cta" data-reveal>
+          <button class="btn btn-primary" data-open-modal>Try Early Access</button>
+          <a class="btn btn-ghost" href="#overview" data-scroll-to="#overview">Overview</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-reveal>Overview</h2>
+          <p class="section-kicker" data-reveal>Where support meets understanding.</p>
+        </div>
+        <div class="grid-2">
+          <div class="grid" style="grid-template-columns:1fr">
+            <div class="card" data-reveal>
+              <p>EchoMind is a quiet, steady presence that lives on your desktop — helping you work, organize your day, and feel understood while you move through the things that matter. It learns your habits and adapts to your emotional rhythm, offering guidance when helpful, and silence when it’s not.</p>
+            </div>
+            <div class="card" data-reveal>
+              <p><strong>Two core systems work together:</strong> <em>Memory Engine</em> remembers your preferences, routines, and moments over time. <em>Context Engine</em> understands what’s on your screen, how you’re interacting, and how you might be feeling in the moment. Together, EchoMind doesn’t just talk — it understands.</p>
+            </div>
+          </div>
+          <div class="how-visual" data-reveal>
+            <div class="visual-inner">
+              <img src="./assets/logo.jpg" alt="EchoMind mark" />
+              <div class="badge" style="top: 10%; left: 12%">Memory</div>
+              <div class="badge" style="bottom: 16%; left: 14%">Skills</div>
+              <div class="badge" style="top: 18%; right: 12%">Context</div>
+              <div class="badge" style="bottom: 10%; right: 14%">Privacy</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="specs" style="margin-top:18px">
+          <div class="card" data-reveal>
+            <h3>Active Task Agent</h3>
+            <p>Open apps, take notes, summarize documents, create reminders, and automate small routines.</p>
+          </div>
+          <div class="card" data-reveal>
+            <h3>Emotional Awareness</h3>
+            <p>Adapts pace, tone, and presence to your energy — encouraging, calming, or quiet when needed.</p>
+          </div>
+          <div class="card" data-reveal>
+            <h3>Private by Design</h3>
+            <p>Local‑first memory, permission‑gated sensors, and transparent controls.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-reveal>How it Works</h2>
+          <p class="section-kicker" data-reveal>Observe → Interpret → Store → Decide → Engage → Learn</p>
+        </div>
+
+        <div class="how-grid">
+          <ol class="steps" aria-label="Process">
+            <li class="step-card" data-reveal>
+              <div class="step-head"><span class="step-num">1</span><span class="step-title">Observe</span></div>
+              <p>Apps, files, screen, mic/cam (opt‑in) feed context events.</p>
+            </li>
+            <li class="step-card" data-reveal>
+              <div class="step-head"><span class="step-num">2</span><span class="step-title">Interpret</span></div>
+              <p>Summarizes and tags events with lightweight embeddings.</p>
+            </li>
+            <li class="step-card" data-reveal>
+              <div class="step-head"><span class="step-num">3</span><span class="step-title">Store</span></div>
+              <p>Private timeline in SQLite + optional vector recall.</p>
+            </li>
+            <li class="step-card" data-reveal>
+              <div class="step-head"><span class="step-num">4</span><span class="step-title">Decide</span></div>
+              <p>Policies trigger check‑ins, nudges, and reminders.</p>
+            </li>
+            <li class="step-card" data-reveal>
+              <div class="step-head"><span class="step-num">5</span><span class="step-title">Engage</span></div>
+              <p>Natural chat, subtle UI, optional TTS voice.</p>
+            </li>
+            <li class="step-card" data-reveal>
+              <div class="step-head"><span class="step-num">6</span><span class="step-title">Learn</span></div>
+              <p>Adapts to routines, mood, and preferences.</p>
+            </li>
+          </ol>
+
+          <div class="card" data-reveal>
+            <h3>Why it feels different</h3>
+            <p>EchoMind understands when to speak and when to stay quiet. It remembers you — not just your prompts — and helps you feel okay while getting things done.</p>
+            <div style="margin-top:8px">
+              <span class="pill">Local‑first</span>
+              <span class="pill">Context‑aware</span>
+              <span class="pill">Gentle presence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tech">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-reveal>Tech Stack</h2>
+          <p class="section-kicker" data-reveal>Lightweight, private, and always‑present.</p>
+        </div>
+        <div class="card tech" data-reveal>
+          <dl>
+            <dt>Core Programming Language</dt><dd>Python</dd>
+            <dt>Desktop Application Framework</dt><dd>PySide6 (Qt for Python)</dd>
+            <dt>Avatar / Visual Character Engine</dt><dd>Godot (embedded) or Qt Animated Canvas</dd>
+            <dt>Machine Learning & Deep Learning</dt><dd>PyTorch</dd>
+            <dt>NLP Libraries</dt><dd>Hugging Face Transformers, spaCy</dd>
+            <dt>STT & TTS</dt><dd>Whisper/Vosk (local STT), Coqui TTS (adaptive emotional synthesis)</dd>
+            <dt>Local Database / Memory</dt><dd>SQLite + DuckDB</dd>
+            <dt>Semantic Recall</dt><dd>FAISS (optional)</dd>
+            <dt>Data Processing</dt><dd>Pandas, NumPy</dd>
+            <dt>System Integration (EyeCore)</dt><dd>Windows API, PSUTIL, UIAutomation, Optional OCR via Tesseract</dd>
+            <dt>Agent Orchestration</dt><dd>Custom Python Action Framework (auditable skills)</dd>
+            <dt>Security & Privacy</dt><dd>Local‑first, AES‑256 at rest, permission‑gated sensors, user‑controlled retention</dd>
+            <dt>Version Control</dt><dd>Git</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="big-cta" data-reveal>
+          <h3 style="margin:0 0 8px">Ready to try EchoMind?</h3>
+          <p class="section-kicker" style="margin:0 0 14px">Join the early access and help shape a companion that works with you and understands you.</p>
+          <div class="cta">
+            <button class="btn btn-primary" data-open-modal>Reserve Your Spot</button>
+            <a class="btn btn-outline" href="products.html">Back to Products</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand small">
+        <img class="logo-img" src="./assets/logo.jpg" alt="Mindcore logo" />
+        <span class="brand-text">Mindcore</span>
+      </div>
+      <div class="legal">
+        <a href="index.html#privacy">Privacy</a>
+        <span>•</span>
+        <a href="products.html">Products</a>
+        <span>•</span>
+        <button class="link" data-open-modal>Join</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- reuse landing modal -->
+  <div class="modal" id="interest-modal" aria-hidden="true" role="dialog" aria-modal="false">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog" role="document" aria-labelledby="interest-title">
+      <button class="modal-close" aria-label="Close" data-close-modal>×</button>
+      <h3 id="interest-title">Join Early Access</h3>
+      <p>Share your email and how you’d like to use EchoMind.</p>
+      <form id="interest-form" class="form">
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+        </label>
+        <label>
+          <span>How would you use EchoMind?</span>
+          <textarea name="use" rows="4" placeholder="Study buddy, focus coach, memory timeline…" required></textarea>
+        </label>
+        <label>
+          <span>How likely are you to use or recommend EchoMind?</span>
+          <div class="choices">
+            <label><input type="radio" name="likelihood" value="1" required> 1</label>
+            <label><input type="radio" name="likelihood" value="2"> 2</label>
+            <label><input type="radio" name="likelihood" value="3"> 3</label>
+            <label><input type="radio" name="likelihood" value="4"> 4</label>
+            <label><input type="radio" name="likelihood" value="5"> 5</label>
+          </div>
+        </label>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Send</button>
+          <a class="btn btn-outline" data-mailto href="mailto:">Open in Mail</a>
+          <button type="button" class="btn btn-ghost" data-close-modal>Close</button>
+        </div>
+      </form>
+      <div class="form-success" hidden>
+        <p>Thanks! We’ll be in touch.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>
