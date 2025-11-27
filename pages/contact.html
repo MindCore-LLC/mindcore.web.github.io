@@ -53,19 +53,27 @@
         <section class="section" style="padding-top: 0;">
             <div class="container">
                 <div class="card card-glass" data-animate style="padding: var(--space-2xl);">
-                    <form id="interest-form" style="display: grid; gap: var(--space-m);">
+                    <form id="interest-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display: grid; gap: var(--space-m);">
+                        <!-- Netlify Forms hidden fields -->
+                        <input type="hidden" name="form-name" value="contact" />
+                        <input type="hidden" name="bot-field" />
+
                         <label style="display: grid; gap: 8px;">
                             <span class="text-small" style="font-weight: 600;">Email</span>
                             <input type="email" name="email" required placeholder="you@example.com" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none;">
                         </label>
                         <label style="display: grid; gap: 8px;">
                             <span class="text-small" style="font-weight: 600;">Topic</span>
-                            <input type="text" name="topic" required placeholder="Partnerships, press, support..." style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none;">
+                            <input type="text" name="subject" required placeholder="Partnerships, press, support..." style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none;">
                         </label>
                         <label style="display: grid; gap: 8px;">
                             <span class="text-small" style="font-weight: 600;">Message</span>
-                            <textarea name="use" rows="4" placeholder="How can we help?" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none; font-family: inherit;"></textarea>
+                            <textarea name="message" rows="4" placeholder="How can we help?" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none; font-family: inherit;"></textarea>
                         </label>
+
+                        <!-- Form status message -->
+                        <div role="status" aria-live="polite" aria-atomic="true" class="form-status"></div>
+
                         <div style="display: flex; gap: 12px; margin-top: 8px;">
                             <button type="submit" class="btn btn-primary" style="flex: 1;">Send message</button>
                             <a class="btn btn-secondary" href="mailto:hello@mindcore.ai" style="flex: 1; text-decoration: none;">Email us</a>

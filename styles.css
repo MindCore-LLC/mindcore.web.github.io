@@ -7,22 +7,40 @@
 */
 
 :root {
-    /* Colors */
+    /* Colors - Base */
     --bg-root: #000000;
     --bg-surface: #0a0a0a;
     --bg-glass: rgba(255, 255, 255, 0.03);
     --bg-glass-hover: rgba(255, 255, 255, 0.06);
-    
+
+    /* Glass depth tiers - NEW */
+    --glass-subtle: rgba(255, 255, 255, 0.02);
+    --glass-default: rgba(255, 255, 255, 0.05);
+    --glass-elevated: rgba(255, 255, 255, 0.08);
+    --glass-premium: rgba(255, 255, 255, 0.12);
+
+    /* Text colors - Enhanced contrast */
     --text-primary: #ffffff;
-    --text-secondary: #86868b;
-    --text-tertiary: #5e5e62;
-    
-    --accent-color: #2997ff; /* Electric Blue */
+    --text-secondary: #a1a1a6; /* UPDATED: Better WCAG AA contrast */
+    --text-tertiary: #8e8e93;
+
+    /* Primary accent */
+    --accent-primary: #2997ff; /* Electric Blue */
     --accent-glow: rgba(41, 151, 255, 0.4);
-    
-    --border-color: rgba(255, 255, 255, 0.1);
-    --border-hover: rgba(255, 255, 255, 0.2);
-    
+
+    /* Secondary accent palette - NEW */
+    --accent-cyan: #64d2ff;
+    --accent-purple: #bf5af2;
+    --accent-green: #30d158;
+    --accent-orange: #ff9f0a;
+    --accent-rose: #ff375f;
+    --accent-ice: #64d2ff;
+
+    /* Border system - Enhanced */
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-default: rgba(255, 255, 255, 0.12);
+    --border-bright: rgba(255, 255, 255, 0.2);
+
     /* Spacing */
     --space-xs: 4px;
     --space-s: 8px;
@@ -31,19 +49,37 @@
     --space-xl: 48px;
     --space-2xl: 80px;
     --space-3xl: 120px;
-    
-    /* Typography */
-    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    --font-display: 'Space Grotesk', var(--font-main);
-    
+
+    /* Typography - Enhanced scale */
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-display: 'Space Grotesk', var(--font-body);
+
+    /* Fluid typography - NEW */
+    --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1.05rem + 0.375vw, 1.375rem);
+    --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem);
+    --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2.25rem);
+    --text-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 3rem);
+    --text-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3.75rem);
+
+    /* Responsive breakpoints - NEW */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+
     /* Radius */
     --radius-s: 8px;
     --radius-m: 16px;
     --radius-l: 24px;
     --radius-full: 999px;
-    
+
     /* Transitions */
     --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -1088,20 +1124,193 @@ button {
     100% { background-position: -200% 0; }
 }
 
-/* Focus States for Accessibility */
+/* Focus States for Accessibility - Enhanced */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
-textarea:focus-visible {
-    outline: 2px solid var(--accent-color);
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Skip to content link (accessibility) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-primary);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 0 0 4px 0;
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Screen reader only content */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 /* Form Improvements */
 input:focus,
 textarea:focus {
-    border-color: var(--accent-color) !important;
+    border-color: var(--accent-primary) !important;
     box-shadow: 0 0 0 3px rgba(41, 151, 255, 0.1);
+}
+
+/* Form status messages (ARIA live regions) */
+.form-status {
+    margin-top: var(--space-m);
+    padding: var(--space-m);
+    border-radius: var(--radius-s);
+    font-size: var(--text-sm);
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background: rgba(48, 209, 88, 0.1);
+    border: 1px solid var(--accent-green);
+    color: var(--accent-green);
+}
+
+.form-status.error {
+    display: block;
+    background: rgba(255, 55, 95, 0.1);
+    border: 1px solid var(--accent-rose);
+    color: var(--accent-rose);
+}
+
+/* Comprehensive Responsive Breakpoints */
+
+/* Container system with responsive padding */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-l);
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 0 var(--space-m);
+    }
+}
+
+/* Grid system enhancements */
+.grid-responsive {
+    display: grid;
+    gap: var(--space-l);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+@media (max-width: 640px) {
+    .grid-responsive {
+        grid-template-columns: 1fr;
+        gap: var(--space-m);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-2-cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3-cols {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-4-cols {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Mobile landscape (640px) */
+@media (max-width: 640px) {
+    :root {
+        --space-xl: 32px;
+        --space-2xl: 48px;
+        --space-3xl: 64px;
+    }
+
+    h1, .text-h1 {
+        font-size: var(--text-3xl);
+    }
+
+    h2, .text-h2 {
+        font-size: var(--text-2xl);
+    }
+}
+
+/* Tablet portrait (768px) - Enhanced */
+@media (max-width: 768px) {
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature-row,
+    .feature-row.reverse {
+        flex-direction: column;
+    }
+
+    .comparison-table {
+        font-size: 0.875rem;
+    }
+}
+
+/* Tablet landscape (1024px) - NEW */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .hero-content {
+        max-width: 90%;
+    }
+}
+
+/* Large desktop (1536px) - NEW */
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+/* Reduced motion support (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Disable particle animation */
+    #canvas-background {
+        display: none;
+    }
+
+    /* Disable orbit animation */
+    .hero::before {
+        animation: none !important;
+    }
 }
 
 /* Print Styles */

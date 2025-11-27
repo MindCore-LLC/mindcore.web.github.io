@@ -105,47 +105,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Form Handling with Validation ---
-    const forms = document.querySelectorAll('form');
-    
+    // --- Form Handling with Netlify Forms Integration ---
+    const forms = document.querySelectorAll('form[data-netlify="true"]');
+
     forms.forEach(formEl => {
         formEl.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const submitBtn = formEl.querySelector('button[type="submit"]');
             const originalText = submitBtn ? submitBtn.textContent : '';
             const formData = new FormData(formEl);
-            const data = Object.fromEntries(formData.entries());
-            
+            const statusDiv = formEl.querySelector('[role="status"]');
+
             // Validate email
             const emailInput = formEl.querySelector('input[type="email"]');
             if (emailInput && !isValidEmail(emailInput.value)) {
                 showFormError(emailInput, 'Please enter a valid email address');
                 return;
             }
-            
+
             // Show loading state
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = '<span class="btn-loader"></span> Sending...';
+                submitBtn.textContent = 'Submitting...';
             }
-            
+
             try {
-                // Simulate API call (replace with actual endpoint)
-                await simulateSubmission(data);
-                
-                // Track successful submission
-                analytics.track('form_submit', { 
-                    form: formEl.id || 'unknown',
-                    fields: Object.keys(data)
+                // Submit to Netlify Forms
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
                 });
-                
-                // Show success
-                const successEl = formEl.parentElement.querySelector('.form-success');
-                if (successEl) {
-                    formEl.style.display = 'none';
-                    successEl.hidden = false;
+
+                if (!response.ok) {
+                    throw new Error('Submission failed');
                 }
+
+                // Track successful submission
+                analytics.track('form_submitted', {
+                    form_name: formData.get('form-name'),
+                    email: formData.get('email'),
+                    source: formData.get('source') || 'unknown',
+                    page: window.location.pathname
+                });
+
+                // Show success message
+                if (statusDiv) {
+                    statusDiv.textContent = 'Thank you! We\'ll be in touch soon.';
+                    statusDiv.className = 'form-status success';
+                }
+
+                // Reset form after delay
+                setTimeout(() => {
+                    formEl.reset();
+                    if (statusDiv) {
+                        statusDiv.className = 'form-status';
+                        statusDiv.textContent = '';
+                    }
+
+                    // Close modal if inside one
+                    const modal = formEl.closest('.modal');
+                    if (modal) {
+                        closeModal();
+                    }
+                }, 2500)
                 
                 // If in modal, auto close
                 if (modal && modal.contains(formEl)) {
@@ -154,10 +178,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 
             } catch (error) {
                 console.error('Form submission error:', error);
-                analytics.track('form_error', { form: formEl.id, error: error.message });
-                
+                analytics.track('form_error', {
+                    form_name: formData.get('form-name'),
+                    error: error.message,
+                    page: window.location.pathname
+                });
+
                 // Show error message
-                showFormMessage(formEl, 'Something went wrong. Please try again.', 'error');
+                if (statusDiv) {
+                    statusDiv.textContent = 'Something went wrong. Please try again.';
+                    statusDiv.className = 'form-status error';
+                }
             } finally {
                 if (submitBtn) {
                     submitBtn.disabled = false;
@@ -166,66 +197,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
+
     function isValidEmail(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
-    
+
     function showFormError(input, message) {
         input.style.borderColor = '#ff375f';
-        
+
         // Remove existing error
         const existingError = input.parentElement.querySelector('.form-error');
         if (existingError) existingError.remove();
-        
+
         const errorEl = document.createElement('span');
         errorEl.className = 'form-error';
         errorEl.style.cssText = 'color: #ff375f; font-size: 12px; margin-top: 4px; display: block;';
         errorEl.textContent = message;
         input.parentElement.appendChild(errorEl);
-        
+
         input.addEventListener('input', () => {
             input.style.borderColor = '';
             errorEl.remove();
         }, { once: true });
-    }
-    
-    function showFormMessage(form, message, type = 'success') {
-        const existingMsg = form.querySelector('.form-message');
-        if (existingMsg) existingMsg.remove();
-        
-        const msgEl = document.createElement('div');
-        msgEl.className = 'form-message';
-        msgEl.style.cssText = `
-            padding: 12px;
-            border-radius: 8px;
-            margin-top: 16px;
-            font-size: 14px;
-            background: ${type === 'error' ? 'rgba(255, 55, 95, 0.1)' : 'rgba(48, 209, 88, 0.1)'};
-            color: ${type === 'error' ? '#ff375f' : '#30d158'};
-            border: 1px solid ${type === 'error' ? 'rgba(255, 55, 95, 0.3)' : 'rgba(48, 209, 88, 0.3)'};
-        `;
-        msgEl.textContent = message;
-        form.appendChild(msgEl);
-        
-        setTimeout(() => msgEl.remove(), 5000);
-    }
-    
-    function simulateSubmission(data) {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                // Store in localStorage as backup (for demo purposes)
-                const submissions = JSON.parse(localStorage.getItem('mindcore_submissions') || '[]');
-                submissions.push({
-                    ...data,
-                    timestamp: new Date().toISOString()
-                });
-                localStorage.setItem('mindcore_submissions', JSON.stringify(submissions));
-                
-                console.log('Form data saved:', data);
-                resolve({ success: true });
-            }, 1000);
-        });
     }
 
     // --- FAQ Accordion ---

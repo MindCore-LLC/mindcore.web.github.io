@@ -357,16 +357,24 @@
             <h3 class="text-h3" style="margin-bottom: var(--space-m);">Join Early Access</h3>
             <p class="text-body" style="margin-bottom: var(--space-l);">Share your email and how you’d like to use MindCore.</p>
             
-            <form id="interest-form" style="display: grid; gap: var(--space-m);">
+            <form id="interest-form" name="early-access" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display: grid; gap: var(--space-m);">
+                <!-- Netlify Forms hidden fields -->
+                <input type="hidden" name="form-name" value="early-access" />
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="source" value="homepage" />
+
                 <label style="display: grid; gap: 8px;">
                     <span class="text-small" style="font-weight: 600;">Email</span>
                     <input type="email" name="email" required placeholder="you@example.com" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none;">
                 </label>
                 <label style="display: grid; gap: 8px;">
                     <span class="text-small" style="font-weight: 600;">How would you use MindCore?</span>
-                    <textarea name="use" rows="3" placeholder="Study buddy, focus coach..." required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none; font-family: inherit;"></textarea>
+                    <textarea name="message" rows="3" placeholder="Study buddy, focus coach..." required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none; font-family: inherit;"></textarea>
                 </label>
-                
+
+                <!-- Form status message (ARIA live region) -->
+                <div role="status" aria-live="polite" aria-atomic="true" class="form-status"></div>
+
                 <div style="display: flex; gap: 12px; margin-top: 8px;">
                     <button type="submit" class="btn btn-primary" style="flex: 1;">Submit Interest</button>
                 </div>
