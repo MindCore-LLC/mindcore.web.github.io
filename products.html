@@ -1,163 +1,212 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MindCore — Products</title>
-  <meta name="description" content="Explore MindCore products — EchoMind, EyeCore, TechMind, GameEye, InterviewCore, EchoLab.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="icon" href="./assets/logo.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="./styles.css">
-  <style>
-    .page-header{padding:120px 0 80px;border-bottom:1px solid var(--line)}
-    .page-header .eyebrow{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
-    .page-header h1{font-size:clamp(48px,7vw,72px);margin:16px 0 12px;font-weight:700;line-height:1.1}
-    .page-header .section-kicker{font-size:18px;color:var(--muted);line-height:1.6}
-    .products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:24px}
-    .product-card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.2);transition:all .3s ease}
-    .product-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.15);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
-    .product-card h3{margin:28px 0 10px 0;font-size:18px;font-weight:600}
-    .product-card p{margin:0 0 16px;color:var(--muted);font-size:15px;line-height:1.5}
-    .product-card .btn{margin-top:16px;width:100%;text-align:center}
-    .status{position:absolute;top:16px;right:16px;font-size:12px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid var(--line);font-weight:600}
-    @media(max-width:1000px){.products-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:680px){.products-grid{grid-template-columns:1fr}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCore | Products</title>
+    <meta name="description" content="Explore the MindCore ecosystem: EchoMind, EyeCore, TechMind, VaultCore, and more.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
 </head>
 <body>
-  <canvas id="bg"></canvas>
-  <div id="gradient"></div>
+    <canvas id="bg"></canvas>
+    <div id="gradient"></div>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img class="logo-img" src="./assets/logo.jpg" alt="Mindcore logo" />
-        <span class="brand-text">Mindcore</span>
-      </div>
-      <nav class="nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#how">How it works</a>
-        <a href="index.html#privacy">Privacy</a>
-        <a href="products.html" class="btn btn-outline">Products</a>
-        <button class="btn btn-primary" data-open-modal>Get Early Access</button>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="page-header">
-      <div class="container">
-        <div class="eyebrow" data-reveal>MindCore Suite</div>
-        <h1 class="headline" data-reveal>Products</h1>
-        <p class="section-kicker" data-reveal>Explore everything we’re building — starting with EchoMind.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="products-grid">
-          <article class="product-card" data-reveal>
-            <div class="status">Available</div>
-            <h3>EchoMind</h3>
-            <p>Your daily desktop co‑pilot that helps you work, organize, and feel understood.</p>
-            <a class="btn btn-primary" href="echomind.html">Explore EchoMind</a>
-          </article>
-
-          <article class="product-card" data-reveal>
-            <div class="status">In Development</div>
-            <h3>EyeCore</h3>
-            <p>Privacy‑aware context layer that powers understanding across apps and devices.</p>
-            <a class="btn btn-outline" href="eyecore.html">View Page</a>
-          </article>
-
-          <article class="product-card" data-reveal>
-            <div class="status">In Development</div>
-            <h3>TechMind</h3>
-            <p>Automated system diagnostics, updates, and fixes — like a personal IT desk.</p>
-            <a class="btn btn-outline" href="techmind.html">View Page</a>
-          </article>
-
-          <article class="product-card" data-reveal>
-            <div class="status">In Development</div>
-            <h3>GameEye</h3>
-            <p>Next‑gen anti‑cheat intelligence built on EyeCore’s signal understanding.</p>
-            <a class="btn btn-outline" href="gameeye.html">View Page</a>
-          </article>
-
-          <article class="product-card" data-reveal>
-            <div class="status">In Development</div>
-            <h3>InterviewCore</h3>
-            <p>Fair, real‑time transparency tools for modern interview environments.</p>
-            <a class="btn btn-outline" href="interviewcore.html">View Page</a>
-          </article>
-
-          <article class="product-card" data-reveal>
-            <div class="status">In Development</div>
-            <h3>EchoLab</h3>
-            <p>MindCore’s research arm focused on emotional intelligence in AI.</p>
-            <a class="btn btn-outline" href="echolab.html">View Page</a>
-          </article>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container flex-between">
+            <a href="index.html" class="brand flex-center" style="gap: 10px;">
+                <img src="assets/logo.jpg" alt="MindCore Logo" style="width: 32px; height: 32px; border-radius: 8px;">
+                <span style="font-weight: 600; font-size: 18px;">MindCore</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link active">Products</a>
+                <a href="eyecore.html" class="nav-link">Infrastructure</a>
+                <a href="echolab.html" class="nav-link">Research</a>
+                <a href="echomind.html" class="btn btn-primary" style="padding: 6px 16px; font-size: 13px;">Get EchoMind</a>
+            </nav>
         </div>
-      </div>
-    </section>
-  </main>
+    </header>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="brand small">
-        <img class="logo-img" src="./assets/logo.jpg" alt="Mindcore logo" />
-        <span class="brand-text">Mindcore</span>
-      </div>
-      <div class="legal">
-        <a href="index.html#home">Home</a>
-        <span>•</span>
-        <a href="index.html#privacy">Privacy</a>
-        <span>•</span>
-        <button class="link" data-open-modal>Join</button>
-      </div>
-    </div>
-  </footer>
+    <main>
+        <!-- Hero Section -->
+        <section class="section" style="padding-top: 120px; padding-bottom: 60px;">
+            <div class="container">
+                <span class="hero-eyebrow" data-animate>The Ecosystem</span>
+                <h1 class="text-display" data-animate style="margin-bottom: var(--space-m);">
+                    Intelligence for <br>
+                    <span class="text-gradient">every context.</span>
+                </h1>
+                <p class="text-body" data-animate style="max-width: 600px;">
+                    From personal companions to enterprise security, MindCore builds systems that understand the world around them.
+                </p>
+            </div>
+        </section>
 
-  <!-- reuse landing modal -->
-  <div class="modal" id="interest-modal" aria-hidden="true" role="dialog" aria-modal="false">
-    <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-dialog" role="document" aria-labelledby="interest-title">
-      <button class="modal-close" aria-label="Close" data-close-modal>×</button>
-      <h3 id="interest-title">Join Early Access</h3>
-      <p>Share your email and how you’d like to use Mindcore.</p>
-      <form id="interest-form" class="form">
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" required placeholder="you@example.com" autocomplete="email">
-        </label>
-        <label>
-          <span>How would you use Mindcore?</span>
-          <textarea name="use" rows="4" placeholder="Study buddy, focus coach, memory timeline…" required></textarea>
-        </label>
-        <label>
-          <span>How likely are you to use or recommend Mindcore?</span>
-          <div class="choices">
-            <label><input type="radio" name="likelihood" value="1" required> 1</label>
-            <label><input type="radio" name="likelihood" value="2"> 2</label>
-            <label><input type="radio" name="likelihood" value="3"> 3</label>
-            <label><input type="radio" name="likelihood" value="4"> 4</label>
-            <label><input type="radio" name="likelihood" value="5"> 5</label>
-          </div>
-        </label>
-        <div class="form-actions">
-          <button class="btn btn-primary" type="submit">Send</button>
-          <a class="btn btn-outline" data-mailto href="mailto:">Open in Mail</a>
-          <button type="button" class="btn btn-ghost" data-close-modal>Close</button>
+        <!-- Products Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="grid-3">
+                    
+                    <!-- EchoMind -->
+                    <a href="echomind.html" class="card card-glass" data-animate style="text-decoration: none; display: block;">
+                        <div class="flex-between" style="margin-bottom: var(--space-m);">
+                            <div class="icon-chip" data-tone="accent">EM</div>
+                            <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; background: rgba(255,255,255,0.1); border-radius: 99px;">Available</span>
+                        </div>
+                        <h3 class="text-h3" style="margin-bottom: 8px;">EchoMind</h3>
+                        <p class="text-small" style="margin-bottom: var(--space-m);">Your daily AI companion. It remembers, understands, and grows with you.</p>
+                        <span class="text-small" style="color: var(--accent-color); font-weight: 600;">Learn more →</span>
+                    </a>
+
+                    <!-- EyeCore -->
+                    <a href="eyecore.html" class="card card-glass" data-animate style="text-decoration: none; display: block;">
+                        <div class="flex-between" style="margin-bottom: var(--space-m);">
+                            <div class="icon-chip" data-tone="signal">EC</div>
+                            <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; background: rgba(255,255,255,0.1); border-radius: 99px;">Infrastructure</span>
+                        </div>
+                        <h3 class="text-h3" style="margin-bottom: 8px;">EyeCore</h3>
+                        <p class="text-small" style="margin-bottom: var(--space-m);">The privacy-aware monitoring infrastructure that powers the ecosystem.</p>
+                        <span class="text-small" style="color: var(--accent-color); font-weight: 600;">View Architecture →</span>
+                    </a>
+
+                    <!-- TechMind -->
+                    <a href="techmind.html" class="card card-glass" data-animate style="text-decoration: none; display: block;">
+                        <div class="flex-between" style="margin-bottom: var(--space-m);">
+                            <div class="icon-chip" data-tone="citrus">TM</div>
+                            <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; background: rgba(255,255,255,0.1); border-radius: 99px;">Preview</span>
+                        </div>
+                        <h3 class="text-h3" style="margin-bottom: 8px;">TechMind</h3>
+                        <p class="text-small" style="margin-bottom: var(--space-m);">Automated computer consulting and troubleshooting co-pilot.</p>
+                        <span class="text-small" style="color: var(--accent-color); font-weight: 600;">Learn more →</span>
+                    </a>
+
+                    <!-- VaultCore -->
+                    <div class="card card-glass" data-animate>
+                        <div class="flex-between" style="margin-bottom: var(--space-m);">
+                            <div class="icon-chip" data-tone="iris">VC</div>
+                            <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; background: rgba(255,255,255,0.05); border-radius: 99px; color: var(--text-secondary);">In Development</span>
+                        </div>
+                        <h3 class="text-h3" style="margin-bottom: 8px;">VaultCore</h3>
+                        <p class="text-small">Digital ownership enforcement platform for the decentralized web.</p>
+                    </div>
+
+                    <!-- GameEye -->
+                    <div class="card card-glass" data-animate>
+                        <div class="flex-between" style="margin-bottom: var(--space-m);">
+                            <div class="icon-chip" data-tone="rose">GE</div>
+                            <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; background: rgba(255,255,255,0.05); border-radius: 99px; color: var(--text-secondary);">In Development</span>
+                        </div>
+                        <h3 class="text-h3" style="margin-bottom: 8px;">GameEye</h3>
+                        <p class="text-small">Smart video game anti-cheat system running on EyeCore.</p>
+                    </div>
+
+                    <!-- InterviewCore -->
+                    <div class="card card-glass" data-animate>
+                        <div class="flex-between" style="margin-bottom: var(--space-m);">
+                            <div class="icon-chip" data-tone="ice">IC</div>
+                            <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; background: rgba(255,255,255,0.05); border-radius: 99px; color: var(--text-secondary);">In Development</span>
+                        </div>
+                        <h3 class="text-h3" style="margin-bottom: 8px;">InterviewCore</h3>
+                        <p class="text-small">Smart interview anti-cheat system for fair hiring.</p>
+                    </div>
+
+                    <!-- EchoLab -->
+                    <a href="echolab.html" class="card card-glass" data-animate style="text-decoration: none; display: block; grid-column: 1 / -1; background: linear-gradient(to right, rgba(41, 151, 255, 0.1), rgba(28, 28, 30, 0.4));">
+                        <div class="flex-between" style="align-items: flex-start;">
+                            <div>
+                                <h3 class="text-h3" style="margin-bottom: 8px;">EchoLab Research</h3>
+                                <p class="text-small" style="max-width: 500px;">Our independent advanced AI research division specializing in next-generation cognitive systems and emotional intelligence.</p>
+                            </div>
+                            <div class="icon-chip" data-tone="graphite">EL</div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="brand flex-center" style="justify-content: start; gap: 10px; margin-bottom: var(--space-m);">
+                        <img src="assets/logo.jpg" alt="MindCore Logo" style="width: 24px; height: 24px; border-radius: 6px;">
+                        <span style="font-weight: 600;">MindCore</span>
+                    </div>
+                    <p class="text-small" style="max-width: 280px;">
+                        Creating AI systems that understand people continuously, not as isolated inputs.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="echomind.html">EchoMind</a></li>
+                        <li><a href="eyecore.html">EyeCore</a></li>
+                        <li><a href="techmind.html">TechMind</a></li>
+                        <li><a href="products.html">All Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#mission">Mission</a></li>
+                        <li><a href="echolab.html">Research</a></li>
+                        <li><a href="pages/careers.html">Careers</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/company/mindcore-llc/" target="_blank">LinkedIn</a></li>
+                        <li><a href="pages/twitter.html">Twitter</a></li>
+                        <li><a href="pages/github.html">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: var(--space-2xl); padding-top: var(--space-l); border-top: 1px solid var(--border-color); text-align: center;">
+                <p class="text-small">&copy; 2025 MindCore LLC. All rights reserved.</p>
+            </div>
         </div>
-      </form>
-      <div class="form-success" hidden>
-        <p>Thanks! We’ll be in touch.</p>
-      </div>
-    </div>
-  </div>
+    </footer>
 
-  <script src="./scripts.js"></script>
+    <!-- Modal -->
+    <div class="modal" id="interest-modal" aria-hidden="true" role="dialog" aria-modal="false" style="display: none;">
+        <div class="modal-backdrop" data-close-modal style="position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 1000;"></div>
+        <div class="modal-dialog card card-glass" role="document" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(500px, 90%); z-index: 1001; padding: var(--space-xl);">
+            <button class="modal-close" aria-label="Close" data-close-modal style="position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--text-secondary); font-size: 24px; cursor: pointer;">&times;</button>
+            <h3 class="text-h3" style="margin-bottom: var(--space-m);">Join Early Access</h3>
+            <p class="text-body" style="margin-bottom: var(--space-l);">Share your email and how you’d like to use MindCore.</p>
+            
+            <form id="interest-form" style="display: grid; gap: var(--space-m);">
+                <label style="display: grid; gap: 8px;">
+                    <span class="text-small" style="font-weight: 600;">Email</span>
+                    <input type="email" name="email" required placeholder="you@example.com" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none;">
+                </label>
+                <label style="display: grid; gap: 8px;">
+                    <span class="text-small" style="font-weight: 600;">How would you use MindCore?</span>
+                    <textarea name="use" rows="3" placeholder="Study buddy, focus coach..." required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none; font-family: inherit;"></textarea>
+                </label>
+                
+                <div style="display: flex; gap: 12px; margin-top: 8px;">
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Submit Interest</button>
+                </div>
+                <p class="text-small" style="text-align: center; opacity: 0.6;">We respect your privacy. No spam.</p>
+            </form>
+            
+            <div class="form-success" hidden style="text-align: center; padding: 20px;">
+                <h4 class="text-h3" style="color: #30d158; margin-bottom: 8px;">Thank you!</h4>
+                <p class="text-body">We've recorded your interest.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

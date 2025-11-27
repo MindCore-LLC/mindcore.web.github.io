@@ -1,292 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MindCore</title>
-    <meta name="description" content="Mindcore is a local‑first AI companion that remembers your life and talks to you using your private memory.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="icon" href="./assets/logo.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="./styles.css">
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCore | Remembered. Understood. You.</title>
+    <meta name="description" content="MindCore provides AI-driven solutions designed to bring people and computers together.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+</head>
+<body>
     <canvas id="bg"></canvas>
     <div id="gradient"></div>
 
+    <!-- Header -->
     <header class="site-header">
-      <div class="container header-inner">
-        <div class="brand">
-          <img class="logo-img" src="./assets/logo.jpg" alt="Mindcore logo" />
-          <span class="brand-text">Mindcore</span>
+        <div class="container flex-between">
+            <a href="index.html" class="brand flex-center" style="gap: 10px;">
+                <img src="assets/logo.jpg" alt="MindCore Logo" style="width: 32px; height: 32px; border-radius: 8px;">
+                <span style="font-weight: 600; font-size: 18px;">MindCore</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="eyecore.html" class="nav-link">Infrastructure</a>
+                <a href="echolab.html" class="nav-link">Research</a>
+                <a href="echomind.html" class="btn btn-primary" style="padding: 6px 16px; font-size: 13px;">Get EchoMind</a>
+            </nav>
         </div>
-        <nav class="nav">
-          <a href="#idea">Idea</a>
-          <a href="#how">How it works</a>
-          <a href="products.html">Products</a>
-          <a href="#privacy">Privacy</a>
-          <a href="https://www.linkedin.com/company/mindcore-llc/?viewAsMember=true" target="_blank" rel="noopener" aria-label="MindCore LinkedIn">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.27 2.3-2.6 4.73-2.6 5.06 0 5.99 3.33 5.99 7.66V24h-5v-7.4c0-1.77-.03-4.06-2.48-4.06-2.48 0-2.86 1.94-2.86 3.94V24h-5V8z" fill="currentColor"/></svg>
-          </a>
-          <a href="#join" class="btn btn-outline" data-open-modal>Get Early Access</a>
-        </nav>
-      </div>
     </header>
 
     <main>
-      <section class="hero" id="home">
-        <div class="container hero-inner">
-          <div class="eyebrow" data-reveal>Local‑first AI</div>
-          <h1 class="headline" data-reveal>
-            Your life. Remembered.
-            <span class="sub">Conversations that feel real because nothing is forgotten.</span>
-          </h1>
-          <div class="cta" data-reveal>
-            <button class="btn btn-primary" data-open-modal>Reserve Your Spot</button>
-            <button class="btn btn-outline" data-scroll-to="#idea">Learn More</button>
-          </div>
-          <ul class="hero-highlights" aria-label="Highlights">
-            <li data-reveal>Always present, quietly helpful</li>
-            <li data-reveal>Private timeline on your device</li>
-            <li data-reveal>Thoughtful check‑ins and reminders</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section grid-2" id="idea">
-        <div class="container">
-          <div class="section-header">
-            <h2 data-reveal>The Core Idea</h2>
-            <p class="section-kicker" data-reveal>Not a tool. A friend powered by AI.</p>
-          </div>
-          <div class="grid">
-            <div class="card" data-reveal>
-              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>Always Present</h3>
-              <p>Runs in the background and pays attention to your screen, apps, voice, and environment — only with your permission.</p>
-            </div>
-            <div class="card" data-reveal>
-              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a2 2 0 0 1-2 2H7l-3 3V7z" fill="none" stroke="currentColor" stroke-width="2"/></svg>Memory that Lasts</h3>
-              <p>Builds a private lifelog on your device. Moments become memories that are searchable, retrievable, and useful.</p>
-            </div>
-            <div class="card" data-reveal>
-              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H7l-3 3V5z" fill="none" stroke="currentColor" stroke-width="2"/></svg>Conversations that Feel Real</h3>
-              <p>Because it remembers, it can follow up on things you did days, weeks, or months ago.</p>
-            </div>
-            <div class="card" data-reveal>
-              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.65-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2"/></svg>A True Companion</h3>
-              <p>It doesn’t just wait for you to talk — it checks in, nudges, and supports your goals.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="how">
-        <div class="container">
-          <div class="section-header">
-            <h2 data-reveal>How it Works</h2>
-            <p class="section-kicker" data-reveal>Observe → Interpret → Store → Decide → Engage → Learn</p>
-          </div>
-
-          <div class="how-grid">
-            <ol class="steps" aria-label="Process">
-              <li class="step-card" data-reveal>
-                <div class="step-head">
-                  <span class="step-num">1</span>
-                  <span class="step-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><path d="M2 12h4m12 0h4M12 2v4m0 12v4" stroke="currentColor" stroke-width="2"/></svg>Observe</span>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="container">
+                <span class="hero-eyebrow" data-animate>MindCore</span>
+                <h1 class="text-display" data-animate style="margin-bottom: var(--space-m);">
+                    Remembered.<br>
+                    Understood.<br>
+                    <span class="text-gradient">You.</span>
+                </h1>
+                <p class="text-body" data-animate style="max-width: 600px; margin: 0 auto var(--space-xl);">
+                    An umbrella company that provides services beyond just simple AI. We create systems that understand people continuously, not as isolated inputs.
+                </p>
+                <div class="flex-center" style="gap: var(--space-m);" data-animate>
+                    <a href="products.html" class="btn btn-primary">Explore Products</a>
+                    <button class="btn btn-secondary" data-open-modal>Join Early Access</button>
                 </div>
-                <p>Trackers for apps, files, screen, mic/cam (opt‑in) feed events into the daemon.</p>
-              </li>
-              <li class="step-card" data-reveal>
-                <div class="step-head">
-                  <span class="step-num">2</span>
-                  <span class="step-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M12 4v16" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/></svg>Interpret</span>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="mission" class="section">
+            <div class="container">
+                <div class="grid-2" style="align-items: center;">
+                    <div data-animate>
+                        <h2 class="text-h2" style="margin-bottom: var(--space-m);">Bridging the gap between <span class="text-gradient">human and machine</span>.</h2>
+                        <p class="text-body" style="margin-bottom: var(--space-l);">
+                            MindCore’s mission is to create AI systems that understand people continuously. We develop infrastructure that allows AI to maintain context, memory, emotional awareness, and adaptive behavior across applications, devices, and daily environments.
+                        </p>
+                        <p class="text-body">
+                            The goal is to build AI that learns you, improving over time, enabling deeply personalized assistance.
+                        </p>
+                    </div>
+                    <div class="card card-glass" data-animate style="display: flex; flex-direction: column; gap: var(--space-m);">
+                        <div class="flex-center" style="justify-content: start; gap: 12px;">
+                            <div class="icon-chip sm" data-tone="accent">OS</div>
+                            <h3 class="text-h3">Contextual Computing</h3>
+                        </div>
+                        <p class="text-small">AI that understands the 'why' and 'how', not just the 'what'.</p>
+                        
+                        <div class="flex-center" style="justify-content: start; gap: 12px; margin-top: var(--space-s);">
+                            <div class="icon-chip sm" data-tone="signal">EQ</div>
+                            <h3 class="text-h3">Emotional Awareness</h3>
+                        </div>
+                        <p class="text-small">Systems that adapt to your mood and mental state.</p>
+                    </div>
                 </div>
-                <p>Summarizes, tags, and embeds events into lightweight memories.</p>
-              </li>
-              <li class="step-card" data-reveal>
-                <div class="step-head">
-                  <span class="step-num">3</span>
-                  <span class="step-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="2"/></svg>Store</span>
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section class="section" style="background: var(--bg-surface);">
+            <div class="container">
+                <div class="flex-between" style="margin-bottom: var(--space-2xl); align-items: flex-end;">
+                    <div>
+                        <h2 class="text-h2">Release Roadmap</h2>
+                        <p class="text-body">Our journey to human-centered AI.</p>
+                    </div>
+                    <a href="echolab.html" class="btn btn-secondary">View Research</a>
                 </div>
-                <p>Private timeline in SQLite + vector index. Local‑first by design.</p>
-              </li>
-              <li class="step-card" data-reveal>
-                <div class="step-head">
-                  <span class="step-num">4</span>
-                  <span class="step-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l3 6 6 .9-4.5 4.3 1 6-5.5-3-5.5 3 1-6L3 9.9 9 9z" fill="none" stroke="currentColor" stroke-width="2"/></svg>Decide</span>
+
+                <div class="grid-2">
+                    <div class="roadmap">
+                        <div class="roadmap-item" data-animate>
+                            <h3 class="text-h3">Phase 1: Foundation</h3>
+                            <p class="text-small" style="margin-bottom: 8px; color: var(--accent-color);">Active Development</p>
+                            <p class="text-body">Launch <strong>EyeCore</strong> (Infrastructure) and <strong>EchoMind</strong> (Companion). Establishing the context-adaptive desktop environment.</p>
+                        </div>
+                        <div class="roadmap-item" data-animate>
+                            <h3 class="text-h3">Phase 2: Expansion</h3>
+                            <p class="text-body">Release <strong>TechMind</strong>. A secondary product running on EyeCore for hardware/software support.</p>
+                        </div>
+                        <div class="roadmap-item" data-animate>
+                            <h3 class="text-h3">Phase 3: Research & Trust</h3>
+                            <p class="text-body"><strong>EchoLabs</strong> research integration. Introduction of <strong>VaultCore</strong> (Aegis/CoreWatch) for enterprise trust.</p>
+                        </div>
+                        <div class="roadmap-item" data-animate>
+                            <h3 class="text-h3">Phase 4: Ecosystem</h3>
+                            <p class="text-body"><strong>GameEye</strong> & <strong>InterviewCore</strong>. Opening the MindCore API for third-party developers.</p>
+                        </div>
+                    </div>
+                    <div style="position: relative; height: 100%; min-height: 300px; border-radius: var(--radius-l); overflow: hidden;">
+                        <img src="assets/logo.jpg" alt="MindCore Future" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: grayscale(100%);">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--bg-surface), transparent);"></div>
+                        <div style="position: absolute; bottom: var(--space-l); left: var(--space-l);">
+                            <h3 class="text-h3">The Future is Adaptive</h3>
+                            <p class="text-small">Building systems that grow with you.</p>
+                        </div>
+                    </div>
                 </div>
-                <p>Policies trigger check‑ins, nudges, and reminders based on context.</p>
-              </li>
-              <li class="step-card" data-reveal>
-                <div class="step-head">
-                  <span class="step-num">5</span>
-                  <span class="step-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H7l-3 3V5z" fill="none" stroke="currentColor" stroke-width="2"/></svg>Engage</span>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section">
+            <div class="container">
+                <div class="card card-glass" style="text-align: center; padding: var(--space-3xl) var(--space-l);">
+                    <h2 class="text-h1" style="margin-bottom: var(--space-m);">Ready to experience the future?</h2>
+                    <p class="text-body" style="margin-bottom: var(--space-xl); max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Join us in building the next generation of human-computer interaction.
+                    </p>
+                    <a href="echomind.html" class="btn btn-accent" style="padding: 16px 32px; font-size: 16px;">Meet EchoMind</a>
                 </div>
-                <p>Chat naturally; TTS can speak; notifications appear when helpful.</p>
-              </li>
-              <li class="step-card" data-reveal>
-                <div class="step-head">
-                  <span class="step-num">6</span>
-                  <span class="step-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 13l-2 3 3 2" stroke="currentColor" stroke-width="2"/></svg>Learn</span>
-                </div>
-                <p>Adapts to your routines, mood, and preferences over time.</p>
-              </li>
-            </ol>
+            </div>
+        </section>
 
-            <div class="how-visual" data-reveal>
-              <div class="visual-inner">
-                <img src="./assets/logo.jpg" alt="Mindcore mark" />
-                <div class="badge" style="top: 12%; left: 12%">Memories</div>
-                <div class="badge" style="bottom: 14%; left: 18%">Skills</div>
-                <div class="badge" style="top: 18%; right: 10%">Chat</div>
-                <div class="badge" style="bottom: 12%; right: 16%">Privacy</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="features grid">
-            <div class="feature" data-reveal>
-              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l4 8h8l-6 5 2 8-8-5-8 5 2-8-6-5h8z" fill="none" stroke="currentColor" stroke-width="2"/></svg>Pluggable Skills</h3>
-              <p>Simple skills/plugins react to triggers and act through a local SDK.</p>
-            </div>
-            <div class="feature" data-reveal>
-              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12a2 2 0 0 1 2 2v12l-4-3H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2"/></svg>Episodic Memory</h3>
-              <p>Moments become searchable memories with summaries, tags, and embeddings.</p>
-            </div>
-            <div class="feature" data-reveal>
-              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="17" cy="7" r="3" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="17" cy="17" r="3" stroke="currentColor" stroke-width="2" fill="none"/><path d="M9.5 10.5 14.5 8M9.5 13.5 14.5 16" stroke="currentColor" stroke-width="2"/></svg>Orchestrated Conversation</h3>
-              <p>Retrieval‑augmented prompts with a plan → answer loop and safety self‑check.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="privacy">
-        <div class="container">
-          <div class="section-header">
-            <h2 data-reveal>Privacy, Consent, and Safety</h2>
-            <p class="section-kicker" data-reveal>Private by default. You stay in control.</p>
-          </div>
-
-          <div class="grid policy">
-            <div class="card" data-reveal>
-              <h3>Local‑first</h3>
-              <p>Data stays on your machine. No cloud sync by default.</p>
-            </div>
-            <div class="card" data-reveal>
-              <h3>Granular Consent</h3>
-              <p>Per‑sensor toggles. You choose what Mindcore can see or hear.</p>
-            </div>
-            <div class="card" data-reveal>
-              <h3>Encryption at Rest</h3>
-              <p>Field‑level AES‑GCM with locked/unlocked control. Passphrase never stored.</p>
-            </div>
-            <div class="card" data-reveal>
-              <h3>Transparency</h3>
-              <p>Daily snapshot and a quick “Do not record” toggle to pause capture anytime.</p>
-            </div>
-          </div>
-
-          <div class="cta center" data-reveal>
-            <button class="btn btn-primary" data-open-modal>I'm interested — keep me posted</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-alt" id="join">
-        <div class="container">
-          <div class="section-header">
-            <h2 data-reveal>Join the Early Access</h2>
-            <p class="section-kicker" data-reveal>Be one of the first to try Mindcore.</p>
-          </div>
-
-          <div class="grid-cta">
-            <div class="cta-card" data-reveal>
-              <h3>Students & Creators</h3>
-              <p>Shape a companion that helps you study, build, and stay balanced.</p>
-              <button class="btn btn-outline" data-open-modal>Reserve a spot</button>
-            </div>
-            <div class="cta-card" data-reveal>
-              <h3>Contributors</h3>
-              <p>We’re building in the open. Contribute skills, integrations, or research.</p>
-              <a class="btn btn-ghost" href="#how">See the architecture</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- About Author (moved above footer) -->
-      <section class="section" id="author">
-        <div class="container">
-          <div class="author-card" data-reveal>
-            <img class="author-pic" src="./assets/author_pic.jpg" alt="Author portrait" />
-            <div class="author-content">
-              <h3>About the Author</h3>
-              <p class="author-tag">Built by Vladislav Kondratyev — crafting local‑first AI that actually cares.</p>
-              <a class="btn btn-primary" href="https://www.linkedin.com/in/vladislav-kondratyev/" target="_blank" rel="noopener">Connect on LinkedIn</a>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="brand small">
-          <img class="logo-img" src="./assets/logo.jpg" alt="Mindcore logo" />
-          <span class="brand-text">Mindcore</span>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="brand flex-center" style="justify-content: start; gap: 10px; margin-bottom: var(--space-m);">
+                        <img src="assets/logo.jpg" alt="MindCore Logo" style="width: 24px; height: 24px; border-radius: 6px;">
+                        <span style="font-weight: 600;">MindCore</span>
+                    </div>
+                    <p class="text-small" style="max-width: 280px;">
+                        Creating AI systems that understand people continuously, not as isolated inputs.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="echomind.html">EchoMind</a></li>
+                        <li><a href="eyecore.html">EyeCore</a></li>
+                        <li><a href="techmind.html">TechMind</a></li>
+                        <li><a href="products.html">All Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#mission">Mission</a></li>
+                        <li><a href="echolab.html">Research</a></li>
+                        <li><a href="pages/careers.html">Careers</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/company/mindcore-llc/" target="_blank">LinkedIn</a></li>
+                        <li><a href="pages/twitter.html">Twitter</a></li>
+                        <li><a href="pages/github.html">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: var(--space-2xl); padding-top: var(--space-l); border-top: 1px solid var(--border-color); text-align: center;">
+                <p class="text-small">&copy; 2025 MindCore LLC. All rights reserved.</p>
+            </div>
         </div>
-        <div class="legal">
-          <a href="#privacy">Privacy</a>
-          <span>•</span>
-          <a href="#how">How it works</a>
-          <span>•</span>
-          <button class="link" data-open-modal>Join</button>
-        </div>
-      </div>
     </footer>
 
-    <div class="modal" id="interest-modal" aria-hidden="true" role="dialog" aria-modal="false">
-      <div class="modal-backdrop" data-close-modal></div>
-      <div class="modal-dialog" role="document" aria-labelledby="interest-title">
-        <button class="modal-close" aria-label="Close" data-close-modal>×</button>
-        <h3 id="interest-title">Join Early Access</h3>
-        <p>Share your email and how you’d like to use Mindcore.</p>
-        <form id="interest-form" class="form">
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" required placeholder="you@example.com" autocomplete="email">
-          </label>
-          <label>
-            <span>How would you use Mindcore?</span>
-            <textarea name="use" rows="4" placeholder="Study buddy, focus coach, memory timeline…" required></textarea>
-          </label>
-          <label>
-            <span>How likely are you to use or recommend Mindcore?</span>
-            <div class="choices">
-              <label><input type="radio" name="likelihood" value="1" required> 1</label>
-              <label><input type="radio" name="likelihood" value="2"> 2</label>
-              <label><input type="radio" name="likelihood" value="3"> 3</label>
-              <label><input type="radio" name="likelihood" value="4"> 4</label>
-              <label><input type="radio" name="likelihood" value="5"> 5</label>
+    <!-- Modal -->
+    <div class="modal" id="interest-modal" aria-hidden="true" role="dialog" aria-modal="false" style="display: none;">
+        <div class="modal-backdrop" data-close-modal style="position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 1000;"></div>
+        <div class="modal-dialog card card-glass" role="document" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(500px, 90%); z-index: 1001; padding: var(--space-xl);">
+            <button class="modal-close" aria-label="Close" data-close-modal style="position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--text-secondary); font-size: 24px; cursor: pointer;">&times;</button>
+            <h3 class="text-h3" style="margin-bottom: var(--space-m);">Join Early Access</h3>
+            <p class="text-body" style="margin-bottom: var(--space-l);">Share your email and how you’d like to use MindCore.</p>
+            
+            <form id="interest-form" style="display: grid; gap: var(--space-m);">
+                <label style="display: grid; gap: 8px;">
+                    <span class="text-small" style="font-weight: 600;">Email</span>
+                    <input type="email" name="email" required placeholder="you@example.com" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none;">
+                </label>
+                <label style="display: grid; gap: 8px;">
+                    <span class="text-small" style="font-weight: 600;">How would you use MindCore?</span>
+                    <textarea name="use" rows="3" placeholder="Study buddy, focus coach..." required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none; font-family: inherit;"></textarea>
+                </label>
+                
+                <div style="display: flex; gap: 12px; margin-top: 8px;">
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Submit Interest</button>
+                </div>
+                <p class="text-small" style="text-align: center; opacity: 0.6;">We respect your privacy. No spam.</p>
+            </form>
+            
+            <div class="form-success" hidden style="text-align: center; padding: 20px;">
+                <h4 class="text-h3" style="color: #30d158; margin-bottom: 8px;">Thank you!</h4>
+                <p class="text-body">We've recorded your interest.</p>
             </div>
-          </label>
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="button" class="btn btn-ghost" data-copy>Copy message</button>
-          </div>
-          <p class="form-note">We store your info only for early access updates. No spam.</p>
-        </form>
-        <div class="form-success" hidden>
-          <h4>Thank you!</h4>
-          <p>We’ve recorded your interest. We’ll reach out soon.</p>
         </div>
-      </div>
     </div>
 
-    <script src="./scripts.js" defer></script>
-  </body>
-  </html>
-
-
+    <script src="scripts.js"></script>
+</body>
+</html>

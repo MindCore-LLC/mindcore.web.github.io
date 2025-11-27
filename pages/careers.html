@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCore Careers</title>
+    <meta name="description" content="Explore upcoming roles at MindCore as we scale human-centric AI.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../assets/logo.jpg" type="image/jpeg">
+</head>
+<body>
+    <canvas id="bg"></canvas>
+    <div id="gradient"></div>
+
+    <header class="site-header">
+        <div class="container flex-between">
+            <a href="../index.html" class="brand flex-center" style="gap: 10px;">
+                <img src="../assets/logo.jpg" alt="MindCore Logo" style="width: 32px; height: 32px; border-radius: 8px;">
+                <span style="font-weight: 600; font-size: 18px;">MindCore</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../products.html" class="nav-link">Products</a>
+                <a href="../eyecore.html" class="nav-link">Infrastructure</a>
+                <a href="../echolab.html" class="nav-link">Research</a>
+                <a href="../echomind.html" class="btn btn-primary" style="padding: 6px 16px; font-size: 13px;">Get EchoMind</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="padding-top: 180px; padding-bottom: 80px;">
+            <div class="container" style="text-align: center;">
+                <span class="hero-eyebrow" data-animate>Careers</span>
+                <h1 class="text-display" data-animate>We are assembling a<br><span class="text-gradient">multidisciplinary team.</span></h1>
+                <p class="text-body" data-animate style="max-width: 620px; margin: var(--space-l) auto 0;">
+                    Our recruiting roadmap opens soon. Share your interest and we will reach out as roles in research, product, and engineering go live.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="card card-glass" data-animate style="text-align: center; padding: var(--space-2xl);">
+                    <h2 class="text-h2" style="margin-bottom: var(--space-m);">Stay in the loop</h2>
+                    <p class="text-body" style="margin-bottom: var(--space-l);">Send us a short note about the kind of work you want to do. We will add you to our confidential talent list.</p>
+                    <button class="btn btn-primary" data-open-modal>Share Interest</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="interest-modal" aria-hidden="true" role="dialog" aria-modal="false" style="display: none;">
+        <div class="modal-backdrop" data-close-modal style="position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 1000;"></div>
+        <div class="modal-dialog card card-glass" role="document" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(500px, 90%); z-index: 1001; padding: var(--space-xl);">
+            <button class="modal-close" aria-label="Close" data-close-modal style="position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--text-secondary); font-size: 24px; cursor: pointer;">&times;</button>
+            <h3 class="text-h3" style="margin-bottom: var(--space-m);">Join Early Access</h3>
+            <p class="text-body" style="margin-bottom: var(--space-l);">Share your email and how you’d like to use MindCore.</p>
+            <form id="interest-form" style="display: grid; gap: var(--space-m);">
+                <label style="display: grid; gap: 8px;">
+                    <span class="text-small" style="font-weight: 600;">Email</span>
+                    <input type="email" name="email" required placeholder="you@example.com" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none;">
+                </label>
+                <label style="display: grid; gap: 8px;">
+                    <span class="text-small" style="font-weight: 600;">How would you use MindCore?</span>
+                    <textarea name="use" rows="3" placeholder="Research, applied AI, design..." required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none; font-family: inherit;"></textarea>
+                </label>
+                <div style="display: flex; gap: 12px; margin-top: 8px;">
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Submit Interest</button>
+                </div>
+                <p class="text-small" style="text-align: center; opacity: 0.6;">We respect your privacy. No spam.</p>
+            </form>
+            <div class="form-success" hidden style="text-align: center; padding: 20px;">
+                <h4 class="text-h3" style="color: #30d158; margin-bottom: 8px;">Thank you!</h4>
+                <p class="text-body">We've recorded your interest.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts.js"></script>
+</body>
+</html>

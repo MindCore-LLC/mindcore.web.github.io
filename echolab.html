@@ -1,109 +1,228 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EchoLab — MindCore</title>
-  <meta name="description" content="EchoLab page — currently in development.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="icon" href="./assets/logo.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="./styles.css">
-  <style>
-    .dev-wrap{min-height:calc(100vh - 150px);display:grid;place-items:center;padding:40px 0}
-    .dev-card{text-align:center;max-width:620px}
-    .dev-card h1{font-size:clamp(36px,5vw,56px);margin:0 0 12px;line-height:1.1;font-weight:700}
-    .dev-card p{color:var(--muted);margin:0 0 24px;font-size:16px;line-height:1.6}
-    .dev-card .cta{justify-content:center}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchoLab | Research</title>
+    <meta name="description" content="EchoLab is MindCore's research hub dedicated to exploring the frontiers of human-AI symbiosis, affective computing, and ethical intelligence.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
 </head>
 <body>
-  <canvas id="bg"></canvas>
-  <div id="gradient"></div>
+    <canvas id="bg"></canvas>
+    <div id="gradient"></div>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img class="logo-img" src="./assets/logo.jpg" alt="Mindcore logo" />
-        <span class="brand-text">Mindcore</span>
-      </div>
-      <nav class="nav">
-        <a href="index.html#home">Home</a>
-        <a href="products.html">Products</a>
-        <a href="index.html#privacy">Privacy</a>
-        <button class="btn btn-primary" data-open-modal>Get Early Access</button>
-      </nav>
-    </div>
-  </header>
-
-  <main class="dev-wrap">
-    <div class="container">
-      <section class="dev-card" data-reveal>
-        <h1>In development</h1>
-        <p>We're building <strong>EchoLab</strong> — MindCore's research arm focused on emotional intelligence in AI.</p>
-        <div class="cta">
-          <a class="btn btn-primary" href="products.html">Back to Products</a>
-          <a class="btn btn-outline" href="echomind.html">Explore EchoMind</a>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container flex-between">
+            <a href="index.html" class="brand flex-center" style="gap: 10px;">
+                <img src="assets/logo.jpg" alt="MindCore Logo" style="width: 32px; height: 32px; border-radius: 8px;">
+                <span style="font-weight: 600; font-size: 18px;">MindCore</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="eyecore.html" class="nav-link">Infrastructure</a>
+                <a href="echolab.html" class="nav-link active">Research</a>
+                <a href="echomind.html" class="btn btn-primary" style="padding: 6px 16px; font-size: 13px;">Get EchoMind</a>
+            </nav>
         </div>
-      </section>
-    </div>
-  </main>
+    </header>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="brand small">
-        <img class="logo-img" src="./assets/logo.jpg" alt="Mindcore logo" />
-        <span class="brand-text">Mindcore</span>
-      </div>
-      <div class="legal">
-        <a href="index.html#home">Home</a>
-        <span>•</span>
-        <a href="index.html#privacy">Privacy</a>
-        <span>•</span>
-        <button class="link" data-open-modal>Join</button>
-      </div>
-    </div>
-  </footer>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="container">
+                <span class="hero-eyebrow" data-animate>EchoLab Research</span>
+                <h1 class="text-display" data-animate style="margin-bottom: var(--space-m);">
+                    Forging the future of<br>
+                    <span class="text-gradient">Human-AI Symbiosis.</span>
+                </h1>
+                <p class="text-body" data-animate style="max-width: 600px; margin: 0 auto var(--space-xl);">
+                    We explore the boundaries where biological cognition meets artificial intelligence, creating systems that don't just compute, but understand.
+                </p>
+            </div>
+        </section>
 
-  <!-- reuse landing modal -->
-  <div class="modal" id="interest-modal" aria-hidden="true" role="dialog" aria-modal="false">
-    <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-dialog" role="document" aria-labelledby="interest-title">
-      <button class="modal-close" aria-label="Close" data-close-modal>×</button>
-      <h3 id="interest-title">Join Early Access</h3>
-      <p>Share your email and how you’d like to use Mindcore.</p>
-      <form id="interest-form" class="form">
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" required placeholder="you@example.com" autocomplete="email">
-        </label>
-        <label>
-          <span>How would you use Mindcore?</span>
-          <textarea name="use" rows="4" placeholder="Study buddy, focus coach, memory timeline…" required></textarea>
-        </label>
-        <label>
-          <span>How likely are you to use or recommend Mindcore?</span>
-          <div class="choices">
-            <label><input type="radio" name="likelihood" value="1" required> 1</label>
-            <label><input type="radio" name="likelihood" value="2"> 2</label>
-            <label><input type="radio" name="likelihood" value="3"> 3</label>
-            <label><input type="radio" name="likelihood" value="4"> 4</label>
-            <label><input type="radio" name="likelihood" value="5"> 5</label>
-          </div>
-        </label>
-        <div class="form-actions">
-          <button class="btn btn-primary" type="submit">Send</button>
-          <a class="btn btn-outline" data-mailto href="mailto:">Open in Mail</a>
-          <button type="button" class="btn btn-ghost" data-close-modal>Close</button>
+        <!-- Mission Section -->
+        <section class="section">
+            <div class="container">
+                <div class="card card-glass" data-animate style="text-align: center; padding: var(--space-xl);">
+                    <h2 class="text-h2" style="margin-bottom: var(--space-m);">Our Mission</h2>
+                    <p class="text-body" style="max-width: 700px; margin: 0 auto;">
+                        To advance the science of machine intelligence beyond raw processing power, focusing on empathy, context awareness, and ethical alignment. We believe the next great leap in AI is not just being smarter, but being more human-centric.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Pillars -->
+        <section class="section" style="background: var(--bg-surface);">
+            <div class="container">
+                <h2 class="text-h2" style="margin-bottom: var(--space-xl);">Research Pillars</h2>
+                <div class="grid-2">
+                    <!-- Pillar 1 -->
+                    <div class="card card-glass" data-animate>
+                        <h3 class="text-h3" style="margin-bottom: 12px; color: var(--accent-color);">Cognitive Modeling</h3>
+                        <p class="text-body">
+                            Simulating human thought processes to create AI that reasons in relatable ways. We study memory formation, attention mechanisms, and decision-making heuristics to build more natural interlocutors.
+                        </p>
+                    </div>
+                    <!-- Pillar 2 -->
+                    <div class="card card-glass" data-animate>
+                        <h3 class="text-h3" style="margin-bottom: 12px; color: var(--accent-color);">Affective Computing</h3>
+                        <p class="text-body">
+                            Developing systems that can recognize, interpret, and simulate human emotions. Our goal is to bridge the emotional gap, allowing AI to respond with appropriate empathy and tone.
+                        </p>
+                    </div>
+                    <!-- Pillar 3 -->
+                    <div class="card card-glass" data-animate>
+                        <h3 class="text-h3" style="margin-bottom: 12px; color: var(--accent-color);">HCI & Interfaces</h3>
+                        <p class="text-body">
+                            Reimagining how humans interact with digital systems. From brain-computer interfaces (BCI) concepts to fluid, intent-based UI that predicts user needs before they are explicitly stated.
+                        </p>
+                    </div>
+                    <!-- Pillar 4 -->
+                    <div class="card card-glass" data-animate>
+                        <h3 class="text-h3" style="margin-bottom: 12px; color: var(--accent-color);">Ethical AI</h3>
+                        <p class="text-body">
+                            Ensuring our systems are safe, unbiased, and privacy-preserving by design. We research techniques for algorithmic transparency and user sovereignty over personal data.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Projects -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-h2" style="margin-bottom: var(--space-xl);">Active Projects</h2>
+                <div class="grid-3">
+                    <!-- Project Mirror -->
+                    <div class="card card-glass" data-animate>
+                        <div style="margin-bottom: 16px; height: 4px; width: 40px; background: var(--accent-color); border-radius: 2px;"></div>
+                        <h3 class="text-h3" style="margin-bottom: 8px;">Project Mirror</h3>
+                        <p class="text-small" style="color: var(--text-secondary); margin-bottom: 16px;">Self-Reflection AI</p>
+                        <p class="text-body">
+                            An AI agent designed to help users understand their own behavioral patterns through Socratic dialogue and data visualization.
+                        </p>
+                    </div>
+
+                    <!-- Project Pulse -->
+                    <div class="card card-glass" data-animate>
+                        <div style="margin-bottom: 16px; height: 4px; width: 40px; background: #30d158; border-radius: 2px;"></div>
+                        <h3 class="text-h3" style="margin-bottom: 8px;">Project Pulse</h3>
+                        <p class="text-small" style="color: var(--text-secondary); margin-bottom: 16px;">Biometric Integration</p>
+                        <p class="text-body">
+                            Experimental integration of wearable health data (heart rate, HRV) to modulate AI response styles based on user stress levels.
+                        </p>
+                    </div>
+
+                    <!-- Project Weaver -->
+                    <div class="card card-glass" data-animate>
+                        <div style="margin-bottom: 16px; height: 4px; width: 40px; background: #bf5af2; border-radius: 2px;"></div>
+                        <h3 class="text-h3" style="margin-bottom: 8px;">Project Weaver</h3>
+                        <p class="text-small" style="color: var(--text-secondary); margin-bottom: 16px;">Knowledge Synthesis</p>
+                        <p class="text-body">
+                            Algorithms for automatically connecting disparate pieces of information across a user's digital footprint to generate novel insights.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section" style="text-align: center;">
+            <div class="container">
+                <h2 class="text-h2" style="margin-bottom: var(--space-m);">Join the Frontier</h2>
+                <p class="text-body" style="max-width: 600px; margin: 0 auto var(--space-l);">
+                    We are always looking for brilliant minds to join our research initiatives. If you are passionate about the future of AI, we want to hear from you.
+                </p>
+                <button class="btn btn-primary" data-open-modal>Apply for Research Access</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="brand flex-center" style="justify-content: start; gap: 10px; margin-bottom: var(--space-m);">
+                        <img src="assets/logo.jpg" alt="MindCore Logo" style="width: 24px; height: 24px; border-radius: 6px;">
+                        <span style="font-weight: 600;">MindCore</span>
+                    </div>
+                    <p class="text-small" style="max-width: 280px;">
+                        Creating AI systems that understand people continuously, not as isolated inputs.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="echomind.html">EchoMind</a></li>
+                        <li><a href="eyecore.html">EyeCore</a></li>
+                        <li><a href="techmind.html">TechMind</a></li>
+                        <li><a href="products.html">All Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#mission">Mission</a></li>
+                        <li><a href="echolab.html">Research</a></li>
+                        <li><a href="pages/careers.html">Careers</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/company/mindcore-llc/" target="_blank">LinkedIn</a></li>
+                        <li><a href="pages/twitter.html">Twitter</a></li>
+                        <li><a href="pages/github.html">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: var(--space-2xl); padding-top: var(--space-l); border-top: 1px solid var(--border-color); text-align: center;">
+                <p class="text-small">&copy; 2025 MindCore LLC. All rights reserved.</p>
+            </div>
         </div>
-      </form>
-      <div class="form-success" hidden>
-        <p>Thanks! We’ll be in touch.</p>
-      </div>
-    </div>
-  </div>
+    </footer>
 
-  <script src="./scripts.js"></script>
+    <!-- Modal -->
+    <div class="modal" id="interest-modal" aria-hidden="true" role="dialog" aria-modal="false" style="display: none;">
+        <div class="modal-backdrop" data-close-modal style="position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 1000;"></div>
+        <div class="modal-dialog card card-glass" role="document" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(500px, 90%); z-index: 1001; padding: var(--space-xl);">
+            <button class="modal-close" aria-label="Close" data-close-modal style="position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--text-secondary); font-size: 24px; cursor: pointer;">&times;</button>
+            <h3 class="text-h3" style="margin-bottom: var(--space-m);">Join Early Access</h3>
+            <p class="text-body" style="margin-bottom: var(--space-l);">Share your email and how you’d like to use MindCore.</p>
+            
+            <form id="interest-form" style="display: grid; gap: var(--space-m);">
+                <label style="display: grid; gap: 8px;">
+                    <span class="text-small" style="font-weight: 600;">Email</span>
+                    <input type="email" name="email" required placeholder="you@example.com" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none;">
+                </label>
+                <label style="display: grid; gap: 8px;">
+                    <span class="text-small" style="font-weight: 600;">How would you use MindCore?</span>
+                    <textarea name="use" rows="3" placeholder="Study buddy, focus coach..." required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-primary); outline: none; font-family: inherit;"></textarea>
+                </label>
+                
+                <div style="display: flex; gap: 12px; margin-top: 8px;">
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Submit Interest</button>
+                </div>
+                <p class="text-small" style="text-align: center; opacity: 0.6;">We respect your privacy. No spam.</p>
+            </form>
+            
+            <div class="form-success" hidden style="text-align: center; padding: 20px;">
+                <h4 class="text-h3" style="color: #30d158; margin-bottom: 8px;">Thank you!</h4>
+                <p class="text-body">We've recorded your interest.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
