@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | MindCore</title>
+    <meta name="description" content="The page you're looking for doesn't exist or has been moved.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="assets/logo.jpg">
+</head>
+<body>
+    <canvas id="bg"></canvas>
+    <div id="gradient"></div>
+
+    <header class="site-header">
+        <div class="container flex-between">
+            <a href="index.html" class="brand flex-center" style="gap: 10px;">
+                <img src="assets/logo.jpg" alt="MindCore Logo" style="width: 32px; height: 32px; border-radius: 8px;">
+                <span style="font-weight: 600; font-size: 18px;">MindCore</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="eyecore.html" class="nav-link">Infrastructure</a>
+                <a href="echolab.html" class="nav-link">Research</a>
+                <a href="echomind.html" class="btn btn-primary" style="padding: 6px 16px; font-size: 13px;">Get EchoMind</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="padding-top: 200px; padding-bottom: 200px; min-height: 80vh; display: flex; align-items: center;">
+            <div class="container" style="text-align: center;">
+                <div class="error-code" data-animate>404</div>
+                <h1 class="text-h1" data-animate style="margin-bottom: var(--space-m);">Page Not Found</h1>
+                <p class="text-body" data-animate style="max-width: 500px; margin: 0 auto var(--space-xl);">
+                    The page you're looking for doesn't exist or has been moved. Let's get you back on track.
+                </p>
+                <div class="flex-center" style="gap: var(--space-m); flex-wrap: wrap;" data-animate>
+                    <a href="index.html" class="btn btn-primary">Go to Homepage</a>
+                    <a href="products.html" class="btn btn-secondary">View Products</a>
+                </div>
+                
+                <div style="margin-top: var(--space-3xl);" data-animate>
+                    <p class="text-small" style="margin-bottom: var(--space-m); color: var(--text-tertiary);">Or try one of these:</p>
+                    <div class="flex-center" style="gap: var(--space-l); flex-wrap: wrap;">
+                        <a href="echomind.html" class="text-small" style="color: var(--accent-color);">EchoMind</a>
+                        <a href="eyecore.html" class="text-small" style="color: var(--accent-color);">EyeCore</a>
+                        <a href="echolab.html" class="text-small" style="color: var(--accent-color);">Research</a>
+                        <a href="pages/contact.html" class="text-small" style="color: var(--accent-color);">Contact</a>
+                        <a href="pages/faq.html" class="text-small" style="color: var(--accent-color);">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div style="text-align: center;">
+                <p class="text-small">&copy; 2025 MindCore LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
